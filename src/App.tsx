@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-//import logo from './logo.svg';
 import './App.scss';
-import { Board } from './components/Board';
+import {Board} from './components/Board';
 
 class App extends Component {
 	render() {
@@ -12,7 +10,7 @@ class App extends Component {
 					<header className="App-header">
 						
 						<h1 className="App-title">
-							Welcome to the <em>Game Of Life</em>
+							<em>Game Of Life</em>
 						</h1>
 					</header>
 				</div>

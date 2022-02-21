@@ -1,5 +1,5 @@
 
-import React, { Component, MouseEventHandler } from 'react';
+import React, { Component, MouseEventHandler, useEffect, useState } from 'react';
 
 interface GridType {
 	rows: number,
@@ -17,10 +17,7 @@ export const Grid: React.FC<GridType> = ({
 	rows,
 	onToggleCell
 }) => {
-	const updateCell = (i: number, j: number): void => {
-		onToggleCell(i, j);
-		console.log(i, j, "123")
-	}
+
 	return (
 		<div
 			className="Grid"
@@ -30,8 +27,8 @@ export const Grid: React.FC<GridType> = ({
 				{grid.map((row: any, j: number) => (
 					row.map((col: any, i: number) => (
 					<div
-						className={`Cell ${grid[i][j] ? 'isActive' : ''}`}
-						onClick={()=> updateCell(i, j)}
+						className={grid[i][j] ? 'Cell isActive' : 'Cell'}
+						onClick={(e)=> onToggleCell(i, j)}
 						key={`${i}_${j}`}
 					/>
 					))
